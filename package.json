@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "E2E tests using MS Playwright",
   "main": "index.js",
-  "author": "ugioni",
+  "author": "nicolasfreitas1",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.9.1",
