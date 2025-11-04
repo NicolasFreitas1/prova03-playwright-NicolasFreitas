@@ -2,7 +2,7 @@
 
 ## GitHub Actions + SonarCloud
 
-[![Build and Tests](https://github.com/nicolasfreitas1/playwright-e2e/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/nicolasfreitas1/playwright-e2e/actions/workflows/node.js.yml)
+[![Build and Tests](https://github.com/NicolasFreitas1/prova03-playwright-NicolasFreitas/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/NicolasFreitas1/prova03-playwright-NicolasFreitas/actions/workflows/node.js.yml)
 
 </br>
 
