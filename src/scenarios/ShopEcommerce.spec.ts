@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { ShopPage } from '../support/pages/ShopPage';
+import { ai } from '@zerostep/playwright';
 
 test.describe('Demoblaze Store', () => {
   let shop: ShopPage;
@@ -52,5 +53,23 @@ test.describe('Demoblaze Store', () => {
     await shop.fillPlaceOrderForm();
     await shop.submitPlaceOrderForm();
     await expect(shop['page']).toHaveURL(/demoblaze\.com/);
+  });
+
+  test('8 - Deve preencher o formulário de Contato com ZeroStep AI', async ({ page }) => {
+    await page.goto('https://www.demoblaze.com/index.html');
+
+    // abre o modal de contato
+    await page.click('a[data-target="#exampleModal"]');
+    await page.waitForSelector('#exampleModal');
+
+    // define o contexto pro ZeroStep
+    const aiArgs = { page, test };
+
+    // instrução natural — ZeroStep vai identificar os campos automaticamente
+    await ai('fill out the contact form with email "nicolas@test.com", name "Nicolas Freitas" and message "Mensagem automática via ZeroStep AI"', aiArgs);
+
+    // envia o formulário
+    page.once('dialog', (dialog) => dialog.accept());
+    await page.click('button[onclick="send()"]');
   });
 });
